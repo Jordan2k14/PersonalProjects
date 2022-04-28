@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+print("Welcome to the leaving cert grade checker")
+print("Please enter a mark that you have achieved!")
 lcgrade = int(input())
 if lcgrade >= 90:
 	print("You have achieved a H1")
@@ -16,4 +18,4 @@ elif lcgrade >= 40:
 elif lcgrade >= 30:
 	print("You have achieved a H7")
 elif lcgrade <= 30:
-	print("You have achieved a FAIL")
+	print("You have achieved a H8")
