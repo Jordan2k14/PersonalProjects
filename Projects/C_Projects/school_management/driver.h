@@ -13,6 +13,7 @@ int i = 0;
 // We are using struct to store the student details
 struct sinfo {
 	char first_name[50];
+    char grade_description[50];
     char last_name[50];
 	int roll_number;
 	float gpa;
@@ -36,6 +37,8 @@ void create_student()
 	printf("Enter the GPA"
 		"you obtained\n");
 	scanf("%f", &st[i].gpa);
+    printf("Enter the grade description for the student\n");
+    scanf("%s", st[i].grade_description);
 	printf("Enter the course ID"
 		" of each course the student is studying\n");
 	for (int j = 0; j < 5; j++) {
@@ -43,7 +46,6 @@ void create_student()
 	}
 	i = i + 1;
 }
-
 
 // Function to find the student
 // by the roll number
@@ -66,6 +68,7 @@ void find_roll()
 			printf(
 				"The CGPA is %f\n",
 				st[i].gpa);
+            printf("The Grade description is %s\n", st[i].grade_description);
 			printf(
 				"Enter the course ID"
 				" of each course\n");
@@ -106,6 +109,7 @@ void find_fn()
 			printf(
 				"The CGPA is %f\n",
 				st[i].gpa);
+            printf("The Grade description is %s\n", st[i].grade_description);
 			printf(
 				"Enter the course ID of each course\n");
 
@@ -148,6 +152,7 @@ void find_course()
 				printf(
 					"The CGPA is %f\n",
 					st[i].gpa);
+                printf("The Grade description is %s\n", st[i].grade_description);
 
 				c = 1;
 
@@ -162,7 +167,7 @@ void find_course()
 
 // Function to print the total
 // number of students
-void tot_s()
+void total()
 {
 	printf("The total number of"
 		" Student is %d\n",
@@ -176,7 +181,7 @@ void tot_s()
 
 // Function to delete a student
 // by the roll number
-void del_s()
+void delete_student()
 {
 	int a;
 	printf("Enter the Roll Number"
@@ -195,7 +200,7 @@ void del_s()
 }
 
 // Function to update a students data
-void up_s()
+void update_student()
 {
 
 	printf("Enter the roll number"
@@ -208,7 +213,8 @@ void up_s()
 				"2. last name\n"
 				"3. roll no.\n"
 				"4. CGPA\n"
-				"5. courses\n");
+                "5. Grade Description"
+				"6. courses\n");
 			int z;
 			scanf("%d", &z);
 			switch (z) {
@@ -231,7 +237,11 @@ void up_s()
 				printf("Enter the new CGPA : \n");
 				scanf("%f", &st[j].gpa);
 				break;
-			case 5:
+            case 5:
+				printf("Enter the new Grade description : \n");
+				scanf("%s", &st[j].grade_description);
+				break;
+			case 6:
 				printf("Enter the new courses \n");
 				scanf(
 					"%d%d%d%d%d", &st[j].cid[0],
@@ -274,22 +284,22 @@ int main()
 			create_student();
 			break;
 		case 2:
-			find_rl();
+			find_roll();
 			break;
 		case 3:
 			find_fn();
 			break;
 		case 4:
-			find_c();
+			find_course();
 			break;
 		case 5:
-			tot_s();
+			total();
 			break;
 		case 6:
-			del_s();
+			delete_student();
 			break;
 		case 7:
-			up_s();
+			update_student();
 			break;
 		case 8:
 			exit(0);
