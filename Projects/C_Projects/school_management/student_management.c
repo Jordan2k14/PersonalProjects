@@ -1,33 +1,21 @@
 // Software -  School Management System
-// Developer - Jordan Ukawoko
 // Date - June 8th 2022
 
+// Include files
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "database.h"
 #include "driver.h"
- 
-// Variable to keep track of
-// number of students
-int i = 0;
- 
-// Structure to store the student
-struct sinfo {
-    char first_name[50];
-    char surname[50];
-    int roll_number;
-    float GPA;
-    char grade_description; // e.g first class honours, second class honours etc etc
-    int cid[10];
-} st[55];
 
-void create_student();
-void find_roll_number();
-void find_first_name();
-void find_course();
-void total();
-void delete_student();
-void update_database();
-void main();
+// These are our function callouts
+void create_student(); // Used to create/add the student to database
+void find_roll();      // Used to add the roll number for the student
+void find_fn();        // Used to add the first name of the student
+void find_course();    // Used to find the course the student is in
+void total();          // Prints the total number of students in the database
+void delete_student(); // Used to delete a student from the database
+void update_student(); // Used to update the student in the database
+int main();            // This function calls our main
+
+
