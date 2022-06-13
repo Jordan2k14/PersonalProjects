@@ -34,7 +34,7 @@ void create_student()
 	scanf("%s", st[i].last_name);
 	printf("Enter the Roll Number of the student\n");
 	scanf("%d", &st[i].roll_number);
-	printf("Enter the GPA"
+	printf("Enter the GPA "
 		"you obtained\n");
 	scanf("%f", &st[i].gpa);
     printf("Enter the grade description for the student\n");
@@ -150,7 +150,7 @@ void find_course()
 					"The Roll Number is %d\n ",
 					st[i].roll_number);
 				printf(
-					"The CGPA is %f\n",
+					"The GPA is %f\n",
 					st[i].gpa);
                 printf("The Grade description is %s\n", st[i].grade_description);
 
@@ -255,6 +255,7 @@ void update_student()
 }
 
 // Driver code
+// Minor Error Within Code - It keeps overriding the new student added. 
 int main()
 
 {
